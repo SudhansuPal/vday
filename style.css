@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Arial;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card.big {
+  max-width: 400px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+button.yes {
+  background: #ff4d6d;
+  color: white;
+  font-weight: bold;
+}
+
+button.no {
+  background: #eee;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.gallery {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin: 15px 0;
+}
+
+.gallery img {
+  width: 150px;
+  border-radius: 15px;
+  transition: transform 0.25s ease;
+}
+
+.gallery img:active {
+  transform: scale(1.08);
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.counter {
+  background: rgba(255,255,255,0.75);
+  padding: 10px;
+  border-radius: 15px;
+  margin: 15px 0;
+}
+
+.heart {
+  position: fixed;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: float 4s linear forwards;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
