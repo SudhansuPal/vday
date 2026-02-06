@@ -48,5 +48,11 @@
 
 
   <script src="script.js"></script>
+   <script>
+    // Call counter only after password is correct
+    document.getElementById("passwordInput").addEventListener("keypress", function(e) {
+      if (e.key === "Enter") checkPassword();
+    });
+   </script>
 </body>
 </html>

@@ -35,20 +35,20 @@ function startCounter() {
 
   function updateCounter() {
     // Set your anniversary date
-    const startDate = new Date("2025-10-31"); // YYYY-MM-DD
-    const today = new Date();
+    const startDate = new Date("2025-10-31T00:00:00"); // YYYY-MM-DD format
+    const now = new Date();
 
-    // Calculate difference in milliseconds
-    const diffTime = today - startDate;
+    const diffMs = now - startDate; // difference in milliseconds
 
-    // Convert to days
-    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    const diffHours = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
+    const diffMinutes = Math.floor((diffMs / (1000 * 60)) % 60);
 
-    counterEl.textContent = `We’ve been together for ${diffDays} days 💖`;
+    counterEl.textContent = `We’ve been together for ${diffDays} days, ${diffHours} hours, and ${diffMinutes} minutes 💕`;
   }
 
-  updateCounter(); // Run once immediately
-  setInterval(updateCounter, 1000 * 60 * 60); // Optional: update hourly
+  updateCounter(); // run immediately
+  setInterval(updateCounter, 60 * 1000); // update every minute
 }
 
 // Call this after showing the mainCard
