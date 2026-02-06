@@ -32,7 +32,7 @@ function playMusic() {
 // ⏳ Relationship counter
 function startCounter() {
   // CHANGE THIS DATE 👇 (YYYY, MM-1, DD)
-  const startDate = new Date(2023, 5, 1);
+  const startDate = new Date(2025, 10, 31);
 
   setInterval(() => {
     const now = new Date();
