@@ -31,21 +31,27 @@ function playMusic() {
 
 // ⏳ Relationship counter
 function startCounter() {
-  // CHANGE THIS DATE 👇 (YYYY, MM-1, DD)
-  const startDate = new Date(2025, 10, 31);
+  const counterEl = document.getElementById("counter");
 
-  setInterval(() => {
-    const now = new Date();
-    const diff = now - startDate;
+  function updateCounter() {
+    // Set your anniversary date
+    const startDate = new Date("2025-10-31"); // YYYY-MM-DD
+    const today = new Date();
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    // Calculate difference in milliseconds
+    const diffTime = today - startDate;
 
-    document.getElementById("counter").textContent =
-      `We’ve been together for ${days} days, ${hours} hours, and ${minutes} minutes 💕`;
-  }, 1000);
+    // Convert to days
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    counterEl.textContent = `We’ve been together for ${diffDays} days 💖`;
+  }
+
+  updateCounter(); // Run once immediately
+  setInterval(updateCounter, 1000 * 60 * 60); // Optional: update hourly
 }
+
+// Call this after showing the mainCard
 
 function startHearts() {
   setInterval(() => {
