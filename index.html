@@ -2,24 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For You ❤️</title>
-
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💖 WILL YOU BE MY VALENTINE?</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="center">
+<body>
 
-  <div class="card">
-    <h1>Hi pretty Goob ❤️</h1>
-    <p>Only POOKIE can get in.</p>
+  <!-- Background music -->
+  <audio id="bgMusic" loop>
+    <source src="assets/song.mp3" type="audio/mpeg">
+  </audio>
 
-    <input type="password" id="password" placeholder="Enter the secret 👀">
-    <button onclick="checkPassword()">Unlock 💌</button>
+  <!-- Login Screen -->
+  <div class="card" id="loginCard">
+    <h1>🔒 Secret Page</h1>
+    <p>Enter the password 💌</p>
+    <input type="password" id="passwordInput" placeholder="Password" />
+    <button onclick="checkPassword()">Unlock 💖</button>
+    <p id="errorMsg"></p>
+  </div>
 
-    <p id="error" class="error"></p>
+  <!-- Valentine Screen -->
+  <div class="card hidden" id="mainCard">
+    <h1>💘 WILL YOU BE MY VALENTINE?</h1>
+
+    <p class="counter" id="counter"></p>
+
+    <div class="photos">
+      <img src="assets/us2.jpeg" alt="us" />
+      <img src="assets/us1.jpg" alt="us" />
+    </div>
+
+    <button onclick="playMusic()">🎵 Play Our Song</button>
+
+    <p class="footer">Forever us 🥰</p>
   </div>
 
   <script src="script.js"></script>
