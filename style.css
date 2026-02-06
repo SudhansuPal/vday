@@ -98,9 +98,42 @@ button.no {
   transform: scale(1.08);
 }
 
-.buttons {
+/* .buttons {
   display: flex;
   gap: 10px;
+} */
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.yes {
+  background: #ff5c8a;
+}
+
+.no {
+  background: #ddd;
+  color: #555;
+}
+
+.no:active {
+  transform: scale(0.98);
+}
+
+/* Grid page */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.grid img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
 }
 
 .counter {

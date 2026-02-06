@@ -14,6 +14,15 @@ function checkPassword() {
   }
 }
 
+function goYes() {
+  window.location.href = "yay.html";
+}
+
+function doNothing() {
+  // intentionally does nothing 😌
+}
+
+
 // 🎵 Music (iOS requires user interaction)
 function playMusic() {
   const music = document.getElementById("bgMusic");
@@ -37,3 +46,22 @@ function startCounter() {
       `We’ve been together for ${days} days, ${hours} hours, and ${minutes} minutes 💕`;
   }, 1000);
 }
+
+function startHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.textContent = "💖";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = 2 + Math.random() * 3 + "s";
+    heart.style.fontSize = 14 + Math.random() * 20 + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }, 300);
+}
+

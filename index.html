@@ -24,19 +24,23 @@
 
   <!-- Valentine Screen -->
   <div class="card hidden" id="mainCard">
-    <h1>💘 WILL YOU BE MY VALENTINE?</h1>
+    <h1>💘 Will You Be My Valentine?</h1>
 
     <p class="counter" id="counter"></p>
 
     <div class="photos">
       <img src="assets/us2.jpeg" alt="us" />
-      <img src="assets/us1.jpg" alt="us" />
     </div>
 
-    <button onclick="playMusic()">🎵 Play Our Song</button>
+    <div class="buttons">
+      <button class="yes" onclick="goYes()">YES 💖</button>
+      <button class="no" onclick="doNothing()">NO 😌</button>
+    </div>
 
-    <p class="footer">Forever us 🥰</p>
-  </div>
+  <button onclick="playMusic()">🎵 Play Our Song</button>
+
+  <p class="footer">Forever us 🥰</p>
+</div>
 
   <script src="script.js"></script>
 </body>

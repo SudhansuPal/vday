@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💖 YAYYYYYYY</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background music -->
+  <audio id="bgMusic" loop autoplay>
+    <source src="assets/song.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card">
+    <h1>🎉 YAYYYYYYY 🎉</h1>
+    <p>You said YES 💕</p>
+
+    <div class="grid">
+      <img src="assets/us1.jpg" />
+      <img src="assets/us4.jpeg" />
+      <img src="assets/us3.jpg" />
+      <img src="assets/IMG_2346.jpeg" />
+    </div>
+
+    <p class="footer">Best decision ever 😌💖</p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    startHearts();
+
+    // iOS autoplay fix (plays once user already interacted on YES)
+    const music = document.getElementById("bgMusic");
+    document.body.addEventListener("touchstart", () => {
+      music.play();
+    }, { once: true });
+  </script>
+
+</body>
+</html>
