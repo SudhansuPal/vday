@@ -10,15 +10,16 @@ body {
 
   background-image: url("assets/bg.jpg");
   background-size: cover;
-  background-position: center top;
+  background-position: center top; /* important */
   background-repeat: no-repeat;
 
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-
-  padding: 40px 16px;
+  align-items: flex-start; /* change from center to flex-start */
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
+
 
 /* Dark overlay for readability */
 body::before {
